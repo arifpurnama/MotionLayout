@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="100"
+        app:motionInterpolator="linear">
+
+        <OnSwipe app:dragDirection="dragUp" />
+    </Transition>
+
+    <!-- StartAnimation-->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/tvHelloWorld">
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="#3F51B5" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/swipeLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <!-- EndAnimation -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/tvHelloWorld">
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="@android:color/white" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/swipeLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>
